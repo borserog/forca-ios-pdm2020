@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lbRemaining: UILabel!
     @IBOutlet weak var lbLabel: UILabel!
     @IBOutlet weak var tfGuess: UITextField!
+    @IBOutlet weak var ivGallows: UIImageView!
     var hangmanGame: Hangman!
     var gameWords = [["gabriel", "meu nome"],
                      ["manga", "uma fruta"],
@@ -49,11 +50,12 @@ class MainViewController: UIViewController {
     }
     
     func updateGame() {
-        self.lbHint.text = self.hangmanGame.hint
+        self.lbHint.text = "DICA: \(self.hangmanGame.hint)"
         self.lbTotalLetters.text = "A palavra possui \(self.hangmanGame.word.count) letras"
-        self.lbGuessedLetters.text = String(self.hangmanGame.guessedLetters)
+        self.lbGuessedLetters.text = "LETRAS TENTADAS: \(String(self.hangmanGame.guessedLetters))"
         self.lbRemaining.text = "Tentativas: \(self.hangmanGame.retries)"
         self.lbLabel.text = String(self.hangmanGame.foundLetters)
+        self.ivGallows.image = UIImage(named: "hg_\(self.hangmanGame.retries).png")
     }
     
 }

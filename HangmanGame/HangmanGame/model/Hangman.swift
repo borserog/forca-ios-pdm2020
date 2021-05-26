@@ -33,9 +33,10 @@ class Hangman: NSObject {
             self.updateFoundLetters(guess: guess)
         } else {
             self.handleGuessNotFound(guess: guess)
+            
         }
         
-        self.guessedLetters.append(guess)
+        
         self.checkGameOverConditions()
     }
     
@@ -61,6 +62,7 @@ class Hangman: NSObject {
             self.retries
                 -= 1
         }
+        self.guessedLetters.append(guess)
     }
     
     func updateFoundLetters(guess: Character) {
