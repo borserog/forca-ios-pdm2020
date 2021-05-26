@@ -80,6 +80,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D80BA28265E797600870C74 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		9DB493F0265DD135002F1FCE = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +110,7 @@
 		9DB493FB265DD135002F1FCE /* HangmanGame */ = {
 			isa = PBXGroup;
 			children = (
+				9D80BA28265E797600870C74 /* assets */,
 				9DB4943E265DD5CC002F1FCE /* model */,
 				9DB4943D265DD5BD002F1FCE /* view */,
 				9DB4943C265DD5B2002F1FCE /* controller */,

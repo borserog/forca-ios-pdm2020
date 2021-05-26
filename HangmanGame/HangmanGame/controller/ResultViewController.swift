@@ -12,7 +12,7 @@ class ResultViewController: UIViewController {
     var result: String?
     
     @IBAction func `return`(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)	
     }
     
     override func viewWillAppear(_ animated: Bool) {

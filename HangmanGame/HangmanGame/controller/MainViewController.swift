@@ -16,6 +16,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lbLabel: UILabel!
     @IBOutlet weak var tfGuess: UITextField!
     var hangmanGame: Hangman!
+    var gameWords = [["gabriel", "meu nome"],
+                     ["manga", "uma fruta"],
+                     ["porsche", "um carro"],
+                     ["zagreb", "uma cidade"],
+                     ["parque", "um lugar"]]
     
     
     @IBAction func guess(_ sender: Any) {
@@ -28,15 +33,19 @@ class MainViewController: UIViewController {
             let rvc = self.storyboard?.instantiateViewController(identifier: "view_resultado") as! ResultViewController
             rvc.result = self.hangmanGame.gameStatus
             self.present(rvc, animated: true, completion: nil)
+            self.newGame()
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("view did load")
-        self.hangmanGame = Hangman(word: "teste", hint: "teste")
-        self.updateGame()
+    override func viewDidAppear(_ animated: Bool) {
+        print("view did appear")
+        self.newGame()
+    }
         
+    func newGame() {
+        let randomIndex = Int.random(in: 0..<gameWords.count)
+        self.hangmanGame = Hangman(word: gameWords[randomIndex][0], hint: gameWords[randomIndex][1])
+        self.updateGame()
     }
     
     func updateGame() {
